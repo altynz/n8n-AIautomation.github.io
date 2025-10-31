@@ -1,19 +1,54 @@
-<!DOCTYPE html>
+const title = "Инвестиции в дачную недвижимость: почему сейчас самое время";
+const date = new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
+const content = `
+<p>Дача — это не только мечта об отдыхе, но и надежный финансовый актив. Инвестиции в загородную недвижимость эффективно защищают ваши средства от инфляции и рыночных волнений.</p>
+<p>Цены на недвижимость постоянно растут, и спрос на участки и дома за городом остается стабильным даже в непростые времена. Это проверенная временем стратегия для укрепления вашего финансового благополучия.</p>
+<p>Не откладывайте решение. Чем раньше вы инвестируете, тем больше потенциальной выгоды сможете получить в будущем.</p>
+`;
+
+const html = `<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Инвестиции в дачную недвижимость</title>
-  <meta name="description" content="Инвестиции в дачную недвижимость">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${title}</title>
+  <meta name="description" content="Как дача защищает от инфляции и приносит доход">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      color: #1a1a1a;
+      background: #fff;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .meta {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    article {
+      border-top: 1px solid #eee;
+      padding-top: 1.5rem;
+    }
+  </style>
 </head>
 <body>
   <article>
-    <h1>Инвестиции в дачную недвижимость</h1>
-    <p><em>Опубликовано: 31.10.2025</em></p>
-    
-<p>Дача — это не только мечта об отдыхе, но и надежный финансовый актив.</p>
-<p>Цены на недвижимость постоянно растут, и спрос на участки за городом остаётся стабильным.</p>
-<p>Чем раньше вы инвестируете, тем больше потенциальной выгоды сможете получить.</p>
-
+    <h1>${title}</h1>
+    <div class="meta">Опубликовано: ${date}</div>
+    ${content}
   </article>
 </body>
-</html>
+</html>`;
+
+return { json: { html } };
