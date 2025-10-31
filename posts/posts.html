@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>n8n Hub — Блог</title>
+  <meta name="description" content="Блог о n8n: автоматизация, интеграции, кейсы и готовые решения">
+  <style>
+    :root {
+      --color-bg: #0f172a;
+      --color-text: #e2e8f0;
+      --color-accent: #3b82f6;
+      --color-sidebar: #1e293b;
+      --color-border: #334155;
+      --font-main: 'Inter', sans-serif;
+      --font-heading: 'Poppins', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 260px;
+      height: 100vh;
+      background: var(--color-sidebar);
+      padding: 2rem 1.5rem;
+      border-right: 1px solid var(--color-border);
+      z-index: 100;
+    }
+
+    .sidebar h1 {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      color: white;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sidebar h1::before {
+      content: "⚙️";
+      font-size: 1.5rem;
+    }
+
+    .sidebar nav ul {
+      list-style: none;
+    }
+
+    .sidebar nav a {
+      display: block;
+      color: var(--color-text);
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .sidebar nav a:hover,
+    .sidebar nav a.active {
+      background: var(--color-accent);
+      color: white;
+    }
+
+    main {
+      margin-left: 260px;
+      padding: 2rem 2rem 2rem 3rem;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://placehold.co/1600x400/1e293b/3b82f6?text=n8n+Blog') no-repeat center center/cover;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 2px solid var(--color-accent);
+    }
+
+    header h1 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    .posts {
+      display: grid;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .post {
+      background: #1e293b;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    .post:hover {
+      transform: translateY(-2px);
+    }
+
+    .post h2 {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+      color: var(--color-accent);
+    }
+
+    .post-meta {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .post p {
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+    }
+
+    .post a {
+      color: var(--color-accent);
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    .post a:hover {
+      color: #60a5fa;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      border-top: 1px solid var(--color-border);
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 80px;
+        padding: 1.5rem 0.5rem;
+      }
+      .sidebar h1 {
+        font-size: 1.2rem;
+      }
+      .sidebar nav a span {
+        display: none;
+      }
+      main {
+        margin-left: 80px;
+        padding: 1.5rem;
+      }
+      header h1 { font-size: 2rem; }
+    }
+
+    @media (max-width: 480px) {
+      .sidebar {
+        display: none;
+      }
+      main {
+        margin-left: 0;
+        padding: 1rem;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Сайдбар -->
+  <aside class="sidebar">
+    <h1>n8n Hub</h1>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Главная</a></li>
+        <li><a href="#" class="active">Блог</a></li>
+        <li><a href="#templates">Шаблоны</a></li>
+        <li><a href="#courses">Курсы</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Основной контент -->
+  <main>
+    <header>
+      <h1>📝 Блог n8n Hub</h1>
+      <p>Практические кейсы, шаблоны и советы по автоматизации без кода.</p>
+    </header>
+
+    <div class="posts">
+      <!-- Пример статьи 1 -->
+      <article class="post">
+        <h2>Как автоматизировать публикацию в Дзен через GitHub + Netlify</h2>
+        <div class="post-meta">Опубликовано: 31 октября 2025</div>
+        <p>В этом руководстве мы покажем, как настроить полностью автоматическую публикацию статей из Notion в Дзен через n8n, GitHub и Netlify.</p>
+        <p>Вы узнаете:</p>
+        <ul>
+          <li>Как создать GitHub Personal Access Token</li>
+          <li>Как настроить ноду «Create or Update File»</li>
+          <li>Как сгенерировать HTML-страницу из Markdown</li>
+          <li>Как подключить сайт к Дзену</li>
+        </ul>
+        <p><a href="/posts/avtomatizaciya-dzen.html">Читать далее →</a></p>
+      </article>
+
+      <!-- Пример статьи 2 -->
+      <article class="post">
+        <h2>Топ-5 шаблонов n8n для маркетологов</h2>
+        <div class="post-meta">Опубликовано: 30 октября 2025</div>
+        <p>Автоматизируйте рутину: рассылки, аналитику, соцсети и CRM — всё через n8n.</p>
+        <p>Включает:</p>
+        <ul>
+          <li>Автопостинг в Telegram и VK</li>
+          <li>Сбор данных из Google Forms → Notion</li>
+          <li>Отправка уведомлений при новых подписчиках</li>
+        </ul>
+        <p><a href="/posts/top-5-shablonov.html">Читать далее →</a></p>
+      </article>
+
+      <!-- Пример статьи 3 -->
+      <article class="post">
+        <h2>Интеграция Notion + Telegram + Google Sheets за 10 минут</h2>
+        <div class="post-meta">Опубликовано: 29 октября 2025</div>
+        <p>Простой workflow, который связывает три сервиса и экономит часы в неделю.</p>
+        <p>Идеально подходит для:</p>
+        <ul>
+          <li>Управления задачами</li>
+          <li>Сбора лидов</li>
+          <li>Автоматических отчетов</li>
+        </ul>
+        <p><a href="/posts/notion-telegram-sheets.html">Читать далее →</a></p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 n8n Automation Hub — Создано с ❤️ и n8n</p>
+    <p>Автоматическая публикация через n8n</p>
+  </footer>
+
+</body>
+</html>
+
